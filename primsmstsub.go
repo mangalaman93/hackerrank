@@ -1,3 +1,5 @@
+// incorrect algorithm
+
 package main
 
 import (
