@@ -40,38 +40,38 @@ func main() {
 	writer := bufio.NewWriter(os.Stdout)
 	var T int
 	fmt.Fscan(reader, &T)
-    findPrimes()
+	findPrimes()
 
 	for t := 0; t < T; t++ {
 		var N int
 		fmt.Fscan(reader, &N)
-        if N < 4 {
-            fmt.Fprint(writer, N, " has 0 representation(s)\n\n")
-            continue
-        }
+        	if N < 4 {
+            		fmt.Fprint(writer, N, " has 0 representation(s)\n\n")
+            		continue
+        	}
         
-        count := 0
-        for _, p := range primes {
-            if p > (N/2) {
-                break
-            }
+	        count := 0
+	        for _, p := range primes {
+        		if p > (N/2) {
+                		break
+            		}
             
-            if cprimes[N-p] {
-                count++
-            }
-        }
+			if cprimes[N-p] {
+                		count++
+            		}
+        	}
         
-        fmt.Fprint(writer, N, " has ", count, " representation(s)\n")
-        for _, p := range primes {
-            if p > (N/2) {
-                break
-            }
+        	fmt.Fprint(writer, N, " has ", count, " representation(s)\n")
+        	for _, p := range primes {
+            		if p > (N/2) {
+        			break
+            		}
             
-            if cprimes[N-p] {
-                fmt.Fprint(writer, p, "+", N-p, "\n")
-            }
-        }
-        fmt.Fprint(writer, "\n")
+            		if cprimes[N-p] {
+                		fmt.Fprint(writer, p, "+", N-p, "\n")
+            		}
+		}
+		fmt.Fprint(writer, "\n")
 	}
 
 	writer.Flush()
