@@ -1,4 +1,4 @@
-// incorrect algorithm
+// incomplete algorithm
 
 package main
 
